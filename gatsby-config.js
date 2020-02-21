@@ -6,6 +6,15 @@
 
 module.exports = {
     plugins: [
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `recipes`,
+                path: `${__dirname}/src/recipes`,
+            },
+        },
+        `gatsby-transformer-remark`,
         `gatsby-plugin-postcss`,
+        `gatsby-plugin-react-helmet`
     ]
 };
