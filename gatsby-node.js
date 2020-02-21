@@ -1,4 +1,4 @@
-const path = require(`path`)
+const path = require(`path`);
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions;
@@ -31,7 +31,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     for (let { node } of result.data.allMarkdownRemark.edges) {
         createPage({
             path: node.frontmatter.path,
-            component, context: {},
+            component,
+            context: {},
         });
     }
-}
+};

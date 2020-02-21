@@ -15,14 +15,16 @@ export default function HTML(props) {
             <body {...props.bodyAttributes}>
                 {props.preBodyComponents}
                 <div
-                    key={`body`} id="___gatsby"
+                    key={`body`}
+                    id="___gatsby"
                     dangerouslySetInnerHTML={{ __html: props.body }}
                 />
                 {props.postBodyComponents}
             </body>
             <footer className="max-w-3xl mx-auto">
-                © Ben Fleming 2020-{new Date().getFullYear()}. All Rights Reserved.
+                © Ben Fleming 2020-{new Date().getFullYear()}. All Rights
+                Reserved.
             </footer>
         </html>
-    )
-};
+    );
+}

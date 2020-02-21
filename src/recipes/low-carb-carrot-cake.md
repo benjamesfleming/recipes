@@ -9,17 +9,17 @@ category: 🍰
 
 ### Ingredients:
 
-- 5 eggs
-- 200 g butter
-- 3 tbsp granulated sweetener
-- 2 tsp vanilla
-- 300 g carrots grated
-- 50 g desiccated unsweetened coconut
-- 150 g almond meal
-- 1 tsp ground cinnamon
-- 2 tsp mixed spice
-- 2 tsp baking powder
-- 1 tsp ginger
+-   5 eggs
+-   200 g butter
+-   3 tbsp granulated sweetener
+-   2 tsp vanilla
+-   300 g carrots grated
+-   50 g desiccated unsweetened coconut
+-   150 g almond meal
+-   1 tsp ground cinnamon
+-   2 tsp mixed spice
+-   2 tsp baking powder
+-   1 tsp ginger
 
 ### Steps:
 

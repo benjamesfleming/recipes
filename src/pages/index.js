@@ -9,9 +9,7 @@ export default ({ data }) => {
     const { nodes } = allMarkdownRemark;
 
     const recipes = nodes.map(n => n.frontmatter);
-    const categories = _.uniq(
-        recipes.map(r => r.category)
-    );
+    const categories = _.uniq(recipes.map(r => r.category));
 
     const PageHeader = (
         <>
@@ -23,11 +21,17 @@ export default ({ data }) => {
         <>
             <h3>All Recipes</h3>
             <div>
-                {categories.map((c, i) => <span key={i}>{c}</span>)}
+                {categories.map((c, i) => (
+                    <span key={i}>{c}</span>
+                ))}
             </div>
-            <hr className="mt-4 mb-0"/>
+            <hr className="mt-4 mb-0" />
             <div>
-                {recipes.map((r, i) => <p key={i}>{r.category} | <Link to={r.path}>{r.title}</Link></p>)}
+                {recipes.map((r, i) => (
+                    <p key={i}>
+                        {r.category} | <Link to={r.path}>{r.title}</Link>
+                    </p>
+                ))}
             </div>
         </>
     );
@@ -40,10 +44,10 @@ export default ({ data }) => {
             <Layout header={PageHeader} content={PageContent} />
         </>
     );
-}
+};
 
 export const pageQuery = graphql`
-    query  {
+    query {
         allMarkdownRemark {
             nodes {
                 frontmatter {

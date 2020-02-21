@@ -7,33 +7,49 @@ import useTimeout from "../utils/use-timeout";
 import Layout from "../layout";
 
 export default ({ data }) => {
-    const { markdownRemark } = data; 
+    const { markdownRemark } = data;
     const { frontmatter, html } = markdownRemark;
     const { title, category, date, time } = frontmatter;
 
     // split the time string. `cook=20m prep=20m` => `[['cook', '20m'], ['prep', '20m']]`
-    // then generate a finishedBy date
-    const timeComponents = useMemo(() => _.chunk(time.split(/[ =]/), 2), [time]);
+    const timeComponents = useMemo(() => {
+        return _.chunk(time.split(/[ =]/), 2);
+    }, [time]);
+
+    // generate a finished by date
+    const finishedByFormat = "h:mm:ss A";
     const finishedBy = useTimeout(
-        () => timeComponents.reduce((r, [,v]) => r.add(.../([0-9]{1,}) ?(s|m|h)/.exec(v).splice(1, 2)), moment()).format('h:mm:ss A'), 1000
+        () =>
+            timeComponents
+                .reduce((date, [, tc]) => {
+                    const regex = new RegExp(/([0-9]{1,}) ?(s|m|h)/);
+                    const [, duration, unit] = regex.exec(tc);
+
+                    return date.add(duration, unit);
+                }, moment())
+                .format(finishedByFormat),
+        1000
     );
 
     const RecipeHeader = (
         <>
-            <a href="/"><h1>My Recipe Book</h1></a>
+            <a href="/">
+                <h1>My Recipe Book</h1>
+            </a>
             <h1>{title}</h1>
             <div className="flex flex-row items-center justify-between">
                 <span className="flex flex-row items-center justify-start">
                     <span className="text-3xl">{category} |&nbsp;</span>
                     <span>
                         <span>
-                        {
-                            timeComponents.map(([k, v], i) => 
-                                <span key={i}>{_.startCase(k)} Time: {v}{i < timeComponents.length -1 && ` | `}</span>
-                            )
-                        } 
+                            {timeComponents.map(([k, v], i) => (
+                                <span key={i}>
+                                    {_.startCase(k)} Time: {v}
+                                    {i < timeComponents.length - 1 && ` | `}
+                                </span>
+                            ))}
                         </span>
-                        <br/>
+                        <br />
                         <span>Finished By {finishedBy}</span>
                     </span>
                 </span>
@@ -47,7 +63,7 @@ export default ({ data }) => {
             <div className="">
                 <Link>Home</Link>&nbsp;<strong>&gt;</strong>&nbsp;{title}
             </div>
-            <div dangerouslySetInnerHTML={{ __html: html }}/>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
         </>
     );
 
@@ -56,7 +72,7 @@ export default ({ data }) => {
             <Helmet defer={false}>
                 <title>{title} | RecipeBook</title>
             </Helmet>
-            <Layout header={RecipeHeader} content={RecipeContent}/>
+            <Layout header={RecipeHeader} content={RecipeContent} />
         </>
     );
 };

@@ -11,15 +11,15 @@ Great for an easy to make game day meal.
 
 ### Ingredients:
 
-- 250g Skinless, boneless chicken tenders
-- 1/4 cup Chia Seeds
-- 1/4 cup Other High Fiber Seed
-- 1/4 cup Cheese grated
-- 1 Teaspoon Salt
-- 1/2 Teaspoon Basil
-- 1 Teaspoon Oregano
-- 2 Cloves Minced Garlic
-- 1 Egg
+-   250g Skinless, boneless chicken tenders
+-   1/4 cup Chia Seeds
+-   1/4 cup Other High Fiber Seed
+-   1/4 cup Cheese grated
+-   1 Teaspoon Salt
+-   1/2 Teaspoon Basil
+-   1 Teaspoon Oregano
+-   2 Cloves Minced Garlic
+-   1 Egg
 
 ### Steps:
 

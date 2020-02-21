@@ -15,6 +15,6 @@ module.exports = {
         },
         `gatsby-transformer-remark`,
         `gatsby-plugin-postcss`,
-        `gatsby-plugin-react-helmet`
-    ]
+        `gatsby-plugin-react-helmet`,
+    ],
 };

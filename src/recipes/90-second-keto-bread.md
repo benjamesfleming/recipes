@@ -9,10 +9,10 @@ category: 🍞
 
 ### Ingredients:
 
-- 3 tbsp Almond Meal
-- 1 egg
-- 1/2 tsp Baking Power
-- 1 tbsp Melted Butter
+-   3 tbsp Almond Meal
+-   1 egg
+-   1/2 tsp Baking Power
+-   1 tbsp Melted Butter
 
 ### Steps:
 

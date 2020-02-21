@@ -9,12 +9,12 @@ category: 🍳
 
 ### Ingredients:
 
-- 2 Eggs
-- 2 tbsp Thickened or Double Cream
-- 1 tsp Crushed Garlic
-- 20 g Butter
-- 25 g Grated Cheese
-- 25 g Baby Spinach to serve
+-   2 Eggs
+-   2 tbsp Thickened or Double Cream
+-   1 tsp Crushed Garlic
+-   20 g Butter
+-   25 g Grated Cheese
+-   25 g Baby Spinach to serve
 
 ### Steps:
 
