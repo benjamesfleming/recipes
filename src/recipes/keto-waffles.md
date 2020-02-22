@@ -4,7 +4,7 @@ date: 2020-02-21
 title: Keto Waffles
 tags: [treat, keto]
 time: prep=10m cook=20m
-category: 🧇
+category: 🍰
 ---
 
 Makes 10 | Serves 5
