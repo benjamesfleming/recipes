@@ -23,7 +23,7 @@ category: 🍰
 
 ### Steps:
 
-1. Beat eggs, melted butter, sweete @ner, and vanilla together.
+1. Beat eggs, melted butter, sweetener, and vanilla together.
 2. Add grated carrot, walnuts, and coconut then mix almond meal/flour, spices and baking powder.
 3. Pour into a greased and lined tin. Bake at 180C for 40-50 minutes or until a fork pushed in, comes out clean.
 4. Wait 10-15 minutes to cool, then serve with your choice of icing.
