@@ -1,7 +1,7 @@
 ---
 path: /r/low-carb-psyllium-husk-bread-rolls
 date: 2020-02-21
-title: Low Carb Psyllium Husk Bread Roll
+title: Low Carb Psyllium Husk Bread Rolls
 tags: [bread, keto]
 time: prep=10m cook=30m
 category: 🍞
