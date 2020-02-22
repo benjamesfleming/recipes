@@ -28,9 +28,15 @@ export default ({ data }) => {
             <hr className="mt-4 mb-0" />
             <div>
                 {recipes.map((r, i) => (
-                    <p key={i}>
-                        {r.category} | <Link to={r.path}>{r.title}</Link>
-                    </p>
+                    <div
+                        key={i}
+                        className="mt-3 flex items-start justify-start"
+                    >
+                        <span className="whitespace-no-wrap">
+                            {r.category} \\&nbsp;
+                        </span>
+                        <Link to={r.path}>{r.title}</Link>
+                    </div>
                 ))}
             </div>
         </>
@@ -39,7 +45,7 @@ export default ({ data }) => {
     return (
         <>
             <Helmet defer={false}>
-                <title>Home | RecipeBook</title>
+                <title>Home \\ RecipeBook</title>
             </Helmet>
             <Layout header={PageHeader} content={PageContent} />
         </>

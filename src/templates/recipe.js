@@ -4,6 +4,7 @@ import { graphql, Link } from "gatsby";
 import * as _ from "lodash";
 import * as moment from "moment";
 import useTimeout from "../utils/use-timeout";
+import DynamicText from "../utils/dynamic-text";
 import Layout from "../layout";
 
 export default ({ data }) => {
@@ -36,32 +37,45 @@ export default ({ data }) => {
             <a href="/">
                 <h1>My Recipe Book</h1>
             </a>
-            <h1>{title}</h1>
-            <div className="flex flex-row items-center justify-between">
+            <div className="mb-4">
+                <DynamicText tag="h1">{title}</DynamicText>
+            </div>
+            <div
+                className="flex flex-row items-center justify-between shadow-inner rounded-lg w-full p-2"
+                style={{ backgroundColor: "rgba(255,255,255,0.25)" }}
+            >
                 <span className="flex flex-row items-center justify-start">
-                    <span className="text-3xl">{category} |&nbsp;</span>
+                    <span className="text-3xl hidden md:block whitespace-no-wrap">
+                        {category} \\&nbsp;
+                    </span>
                     <span>
-                        <span>
+                        <DynamicText>
                             {timeComponents.map(([k, v], i) => (
-                                <span key={i}>
+                                <>
                                     {_.startCase(k)} Time: {v}
-                                    {i < timeComponents.length - 1 && ` | `}
-                                </span>
+                                    {i < timeComponents.length - 1 && ` \\\\ `}
+                                </>
                             ))}
-                        </span>
+                        </DynamicText>
                         <br />
                         <span>Finished By {finishedBy}</span>
                     </span>
                 </span>
-                <span>{date}</span>
+                <span className="hidden md:block">
+                    {moment(date).format("dddd Do of MMM YYYY")}
+                </span>
             </div>
         </>
     );
 
     const RecipeContent = (
         <>
-            <div className="">
-                <Link>Home</Link>&nbsp;<strong>&gt;</strong>&nbsp;{title}
+            <div className="w-100 relative">
+                <DynamicText>
+                    <Link to="/">Home</Link>
+                    &nbsp;\\&nbsp;
+                    {title}
+                </DynamicText>
             </div>
             <div dangerouslySetInnerHTML={{ __html: html }} />
         </>
@@ -70,7 +84,7 @@ export default ({ data }) => {
     return (
         <>
             <Helmet defer={false}>
-                <title>{title} | RecipeBook</title>
+                <title>{title} \\ RecipeBook</title>
             </Helmet>
             <Layout header={RecipeHeader} content={RecipeContent} />
         </>
@@ -82,7 +96,7 @@ export const pageQuery = graphql`
         markdownRemark(frontmatter: { path: { eq: $path } }) {
             html
             frontmatter {
-                date(formatString: "DD/MM/YYYY")
+                date
                 path
                 title
                 tags

@@ -21,7 +21,7 @@ export default function HTML(props) {
                 />
                 {props.postBodyComponents}
             </body>
-            <footer className="max-w-3xl mx-auto">
+            <footer className="max-w-3xl mx-auto p-6 pt-0">
                 © Ben Fleming 2020-{new Date().getFullYear()}. All Rights
                 Reserved.
             </footer>
