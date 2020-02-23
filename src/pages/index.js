@@ -49,7 +49,10 @@ export default ({ data }) => {
                 {categories.map((c, i) => (
                     <div
                         key={i}
+                        tabIndex={i + 1}
+                        role="button"
                         onClick={() => toggle(c)}
+                        onKeyUp={e => e.keyCode === 13 && toggle(c)}
                         className={`
                             mr-2 mt-2 px-4 py-1 cursor-pointer border-4  rounded
                             ${
@@ -68,7 +71,10 @@ export default ({ data }) => {
                 {tags.map((t, i) => (
                     <div
                         key={i}
+                        tabIndex={categories.length + i + 1}
+                        role="button"
                         onClick={() => toggle(t)}
+                        onKeyUp={e => e.keyCode === 13 && toggle(t)}
                         className={`
                             mt-2 mx-2 cursor-pointer font-bold
                             ${
