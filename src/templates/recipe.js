@@ -41,7 +41,7 @@ export default ({ data }) => {
                 <DynamicText tag="h1">{title}</DynamicText>
             </div>
             <div
-                className="flex flex-row items-center justify-between shadow-inner rounded-lg w-full p-2"
+                className="flex flex-row items-center justify-between shadow-inner rounded w-full p-2"
                 style={{ backgroundColor: "rgba(255,255,255,0.25)" }}
             >
                 <span className="flex flex-row items-center justify-start">
