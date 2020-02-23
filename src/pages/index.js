@@ -45,16 +45,19 @@ export default ({ data }) => {
     const PageContent = (
         <>
             <h3>Categories</h3>
-            <div className="flex flex-wrap justify-start">
+            <div className="flex flex-wrap justify-start -mx-1">
                 {categories.map((c, i) => (
                     <div
                         key={i}
+                        tabIndex={i + 1}
+                        role="button"
                         onClick={() => toggle(c)}
+                        onKeyUp={e => e.keyCode === 13 && toggle(c)}
                         className={`
-                            mr-2 mt-2 px-4 py-1 cursor-pointer border-4  rounded
+                            mx-1 mt-2 p-1 cursor-pointer border-b-4 rounded
                             ${
                                 filters.indexOf(c) > -1
-                                    ? "border-red-500 bg-red-300"
+                                    ? "border-green-600 bg-green-200 shadow-lg"
                                     : "border-transparent"
                             }
                         `.trim()}
@@ -68,12 +71,15 @@ export default ({ data }) => {
                 {tags.map((t, i) => (
                     <div
                         key={i}
+                        tabIndex={categories.length + i + 1}
+                        role="button"
                         onClick={() => toggle(t)}
+                        onKeyUp={e => e.keyCode === 13 && toggle(t)}
                         className={`
                             mt-2 mx-2 cursor-pointer font-bold
                             ${
                                 filters.indexOf(t) > -1
-                                    ? "text-red-500"
+                                    ? "text-green-600"
                                     : "text-gray-800"
                             }
                         `.trim()}
