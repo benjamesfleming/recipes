@@ -10,7 +10,7 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `recipes`,
-                path: `${__dirname}/src/recipes`,
+                path: `${__dirname}/recipes`,
             },
         },
         `gatsby-transformer-remark`,
