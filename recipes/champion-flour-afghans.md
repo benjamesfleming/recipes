@@ -2,7 +2,7 @@
 path: /r/champion-flour-afghans
 date: 2020-02-25
 title: Champion Flour Afghans
-tags: [treat, biscut]
+tags: [treat, biscuit]
 time: prep=15m cook=15m
 category: 🍰
 ---
