@@ -1,0 +1,17 @@
+---
+kind: pipeline
+type: kubernetes
+name: build
+
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
+    registry: index.benfleming.nz
+    repo: index.benfleming.nz/recipes
+    cache_from: index.benfleming.nz/recipes:latest
+    tags: latest
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
