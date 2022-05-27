@@ -15,7 +15,7 @@ Makes 12 | Serves 6
 -   1/2 cup sugar
 -   1 1/4 cups flour
 -   1/4 cup cocoa
--   2 cups cornflour
+-   2 cups cornflakes
 
 ### Steps:
 
